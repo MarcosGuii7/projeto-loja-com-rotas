@@ -1,0 +1,31 @@
+.grid-partners {
+    display: flex;
+    gap: 1rem
+}
+
+.card-partners {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    background: #fff;
+    width: 12rem;
+}
+
+.card-partners img {
+    width: 50%;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-partners h3 {
+    margin: 8px 0 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+}
+
+.card-partners p {
+    margin: 0 0 8px;
+    color: #555;
+}
