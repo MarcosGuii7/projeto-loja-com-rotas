@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import nike from '../assets/nike.png'
-import "../components/Partners/Partners.css";
+import { useState, useEffect } from "react";
+import PartnersCard from "../components/PartnersCard/PartnersCard";
 
 export default function Partners() {
-    const [parceiros] = useState([
-        { id: 1, nome: "Nike", img: nike },
-    ]);
+const [carregando, setCarregando] = useState(true)
+
+useEffect(() => {
+    const timer = setTimeout(() => setCarregando(false), 1000)
+    return() => clearTimeout(timer)
+})
 
     return (
-        <div className="grid-partners">
-            {parceiros.map((parceiro) => (
-                <article className="card-partners" key={parceiro.id}>
-                    <img src={parceiro.img} alt={parceiro.nome}/>
-                    <h3>{parceiro.nome}</h3>
-                </article>
-            ))}
-        </div>
-    );
+        <section>
+            <h2>Nossos Parceiros!</h2>
+
+            {carregando ? (<p>Carregando...</p>) : (<PartnersCard/>)}
+        </section>
+    )
 }
